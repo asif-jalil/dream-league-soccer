@@ -17,12 +17,11 @@ Dream League Soccer is a **API** based website. The main purpose of this website
 If you want to add more feature, simply clone this repo
 
 ```
-git clone repo-link
+git clone https://github.com/Porgramming-Hero-web-course/react-router-asif-jalil.git
 cd react-router
 npm install
-
 ```
-
+ho
 ## Visit Live Site
 
 If you wanna take a look of my website, [Go Here](https://github.com/facebook/create-react-app)
