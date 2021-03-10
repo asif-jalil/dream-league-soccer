@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { Redirect, Route, useParams } from "react-router";
+import { useParams } from "react-router";
 import maleTeam from "../../images/male.png";
 import feMaleTeam from "../../images/female.png";
 import "./TeamDetail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 
 const TeamDetail = () => {
   const { teamId } = useParams();
