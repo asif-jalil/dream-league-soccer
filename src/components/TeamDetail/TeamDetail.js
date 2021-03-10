@@ -50,7 +50,10 @@ const TeamDetail = () => {
                   </div>
                 </Col>
                 <Col lg={5} md={6}>
-                  <div className="team-img">{strGender === "Male" ? <img src={maleTeam} alt={strTeam} className="img-fluid" /> : <img src={feMaleTeam} alt={strTeam} className="img-fluid" />}</div>
+                  <div className="team-img">
+                    {strGender === "Male" && <img src={maleTeam} alt={strTeam} className="img-fluid" />}
+                    {strGender === "Female" && <img src={feMaleTeam} alt={strTeam} className="img-fluid" />}
+                  </div>
                 </Col>
               </Row>
             </Card.Body>
