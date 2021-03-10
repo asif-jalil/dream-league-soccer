@@ -1,0 +1,58 @@
+.hero-logo {
+  max-width: 170px;
+  max-height: 170px;
+}
+
+.hero-logo img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.team-detail-item {
+  background: #fc4d57;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.team-info .card-title {
+  font-size: 34px;
+}
+
+.team-info .card-text {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.team-detail .social .icon {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 50%;
+  background: burlywood;
+  margin: 0 7px;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.team-detail .social .icon.fb {
+  background: #3b5999;
+}
+.team-detail .social .icon.twitter {
+  background: #55acee;
+}
+.team-detail .social .icon.insta {
+  background: #e4405f;
+}
+.team-detail .social .icon.yt {
+  background: #cd201f;
+}
