@@ -5,11 +5,12 @@ import maleTeam from "../../images/male.png";
 import feMaleTeam from "../../images/female.png";
 import "./TeamDetail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import banner from "../../images/stadium.jpg";
 
 const TeamDetail = () => {
   const { teamId } = useParams();
   const [team, setTeam] = useState({});
-  const { strTeamBadge, strTeam, strCountry, strGender, intFormedYear, strSport, strFacebook, strTwitter, strInstagram, strYoutube, strDescriptionEN, strStadiumDescription } = team;
+  const { strTeamBadge, strTeam, strCountry, strGender, intFormedYear, strSport, strFacebook, strTwitter, strInstagram, strYoutube, strDescriptionEN, strStadiumDescription, strTeamBanner } = team;
 
   useEffect(() => {
     const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}`;
@@ -18,11 +19,24 @@ const TeamDetail = () => {
       .then((data) => setTeam(data.teams[0]));
   }, [teamId]);
 
-  console.log(team);
+  let teamBanner;
+  if (strTeamBanner) {
+    teamBanner = strTeamBanner;
+  } else {
+    teamBanner = banner;
+  }
+
+  const heroBannerStyle = {
+    backgroundImage: `url(${teamBanner})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    width: "100%",
+  };
 
   return (
     <main className="bg-light">
-      <section className="hero">
+      <section className="hero" style={heroBannerStyle}>
         <div className="hero-logo">
           <img src={strTeamBadge} alt={strTeam} />
         </div>
@@ -65,16 +79,16 @@ const TeamDetail = () => {
           </div>
 
           <div className="social text-center">
-            <a className="icon fb" href={`https://${strFacebook}`} rel="noreferrer" target="_blank">
+            <a className="icon fb" href={strFacebook ? `https://${strFacebook}` : `https://www.facebook.com/`} rel="noreferrer" target="_blank">
               <FontAwesomeIcon icon={["fab", "facebook-f"]} />
             </a>
-            <a className="icon twitter" href={`https://${strTwitter}`} rel="noreferrer" target="_blank">
+            <a className="icon twitter" href={strTwitter ? `https://${strTwitter}` : `https://twitter.com/`} rel="noreferrer" target="_blank">
               <FontAwesomeIcon icon={["fab", "twitter"]} />
             </a>
-            <a className="icon insta" href={`https://${strInstagram}`} rel="noreferrer" target="_blank">
+            <a className="icon insta" href={strInstagram ? `https://${strInstagram}` : `https://www.instagram.com/`} rel="noreferrer" target="_blank">
               <FontAwesomeIcon icon={["fab", "instagram"]} />
             </a>
-            <a className="icon yt" href={`https://${strYoutube}`} rel="noreferrer" target="_blank">
+            <a className="icon yt" href={strYoutube ? `https://${strYoutube}` : `https://www.youtube.com/`} rel="noreferrer" target="_blank">
               <FontAwesomeIcon icon={["fab", "youtube"]} />
             </a>
           </div>
